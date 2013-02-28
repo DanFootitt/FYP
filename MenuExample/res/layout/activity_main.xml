@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/BusStopButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:text="Bus Stop" />
+
+    <Button
+        android:id="@+id/SearchButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/BusStopButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/SettingsButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignRight="@+id/SearchButton"
+        android:layout_below="@+id/SearchButton"
+        android:layout_marginTop="41dp"
+        android:text="Settings" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="Bus Application"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
