@@ -1,4 +1,0 @@
-FYP
-===
-
-FYP Application Repository
