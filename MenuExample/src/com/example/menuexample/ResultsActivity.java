@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import android.net.NetworkInfo.DetailedState;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultsActivity extends Activity {
@@ -52,6 +57,10 @@ public class ResultsActivity extends Activity {
 		
 		TextView textview3_3 = (TextView) findViewById(R.id.TextView3_3);
 		textview3_3.setText(calToString((jresults.get(2).arrivalTime-jresults.get(2).departTime) - hour));
+		
+		addButtonListener((Button)findViewById(R.id.more1), new Intent(getApplicationContext(), DeatiledResultActivity.class), jresults.get(0));
+		addButtonListener((Button)findViewById(R.id.more2), new Intent(getApplicationContext(), DeatiledResultActivity.class), jresults.get(1));
+		addButtonListener((Button)findViewById(R.id.more3), new Intent(getApplicationContext(), DeatiledResultActivity.class), jresults.get(2));
 	}
 
 	@Override
@@ -68,6 +77,20 @@ public class ResultsActivity extends Activity {
 		String formattedTime = df.format(cal1.getTime());
 
 		return formattedTime;
+	}
+	
+	public void addButtonListener(Button button , final Intent intent, final JourneyResult jr)
+	{
+		button.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Calendar c  = Calendar.getInstance();
+				intent.putExtra("currentTime", c.getTimeInMillis());
+				intent.putExtra("journeyResult", jr);
+				startActivity(intent);
+			}
+		});
 	}
 
 }

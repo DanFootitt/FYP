@@ -11,6 +11,7 @@ public class JourneyResult implements Serializable{
 	long arrivalTime;
 	String departStop;
 	long departTime;
+	String day;
 		
 	
 	public JourneyResult(){
@@ -26,6 +27,11 @@ public class JourneyResult implements Serializable{
 	public void setRun(int run)
 	{
 		this.run = run;		
+	}
+	
+	public void setDay(String run)
+	{
+		this.day = run;		
 	}
 	
 	public void setArrivalStop(String arr)

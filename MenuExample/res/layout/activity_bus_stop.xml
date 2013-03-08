@@ -4,29 +4,51 @@
     android:layout_height="match_parent"
     tools:context=".BusStopActivity" >
 
-     <Spinner
+    <Spinner
         android:id="@+id/Spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="33dp" />
 
     <Spinner
         android:id="@+id/Spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Spinner1"
-        android:layout_marginTop="20dp" />
+        android:layout_below="@+id/Spinner1" />
+
+    <Spinner
+        android:id="@+id/hourSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Spinner2"
+        android:layout_marginTop="17dp" />
 
     <Button
         android:id="@+id/stopSearchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Spinner2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp"
+        android:layout_marginBottom="34dp"
         android:text="Search" />
+
+    <Spinner
+        android:id="@+id/minuteSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/hourSpinner"
+        android:longClickable="false" />
+
+    <Spinner
+        android:id="@+id/daySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/minuteSpinner" />
 
 </RelativeLayout>

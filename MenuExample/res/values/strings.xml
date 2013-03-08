@@ -7,5 +7,6 @@
     <string name="title_activity_bus_stop">BusStopActivity</string>
     <string name="title_activity_search_bus_stop">SearchBusStopActivity</string>
     <string name="title_activity_results">ResultsActivity</string>
+    <string name="title_activity_deatiled_result">DeatiledResultActivity</string>
 
 </resources>

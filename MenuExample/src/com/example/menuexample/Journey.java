@@ -7,6 +7,7 @@ public class Journey {
 	int _run;
 	int _stopID;
 	long _time;
+
 	
 	public Journey(){}
 	
