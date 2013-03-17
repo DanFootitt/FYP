@@ -7,16 +7,18 @@ public class Stop implements Serializable{
 	 
 	int _id;
     String _name;
-    String _gpsLoc;
+    double _lat;
+    double _lng;
  
 
     public Stop(){
  
     }
 
-    public Stop(String name, String gps){
+    public Stop(String name, double lat, double lng){
         this._name = name;
-        this._gpsLoc = gps;
+        this._lat = lat;
+        this._lng = lng;
     }
 
 
@@ -28,12 +30,20 @@ public class Stop implements Serializable{
         this._name = name;
     }
  
-    public String getLocation(){
-        return this._gpsLoc;
+    public Double getLat(){
+        return this._lat;
+    }
+    
+    public Double getLng(){
+        return this._lng;
     }
  
-    public void setLocation(String location){
-        this._gpsLoc = location;
+    public void setLat(Double lat){
+        this._lat = lat;
+    }
+    
+    public void setLng(Double lng){
+        this._lng = lng;
     }
     
     public int getID(){

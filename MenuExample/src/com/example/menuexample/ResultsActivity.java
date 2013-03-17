@@ -57,6 +57,12 @@ public class ResultsActivity extends Activity {
 		
 		TextView textview3_3 = (TextView) findViewById(R.id.TextView3_3);
 		textview3_3.setText(calToString((jresults.get(2).arrivalTime-jresults.get(2).departTime) - hour));
+	
+		TextView depText = (TextView)findViewById(R.id.textView1);
+		TextView arrText = (TextView)findViewById(R.id.TextView01);
+		
+		depText.setText(jresults.get(0).departStop);
+		arrText.setText(jresults.get(0).arrivalStop);
 		
 		addButtonListener((Button)findViewById(R.id.more1), new Intent(getApplicationContext(), DeatiledResultActivity.class), jresults.get(0));
 		addButtonListener((Button)findViewById(R.id.more2), new Intent(getApplicationContext(), DeatiledResultActivity.class), jresults.get(1));

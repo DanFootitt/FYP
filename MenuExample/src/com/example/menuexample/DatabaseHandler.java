@@ -22,7 +22,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static DatabaseHandler _dbHandler;
 	private static Context _context;
 	private static final String DATABASE_PATH = "/data/data/com.example.menuexample/databases/";
-	private static final String DATABASE_NAME = "timetable_sqlite";
+	private static final String DATABASE_NAME = "timetable_sqlite_v3";
 	private static final String TABLE_JOURNEY = "JOURNEY_TABLE";
 	private static final String TABLE_ROUTE = "ROUTE_TABLE";
 	private static final String TABLE_STOP = "STOP_TABLE";
@@ -43,9 +43,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	}
 
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+
+		//String CREATE_STOP_TABLE = "CREATE TABLE STOP_TABLE (STOP_ID integer primary key autoincrement, STOP_NAME text not null, GPS_LAT real not null, GPS_LNG real not null)";
+		//String CREATE_ROUTE_TABLE = "CREATE TABLE ROUTE_TABLE (ROUTE_ID integer primary key autoincrement, ROUTE_NAME text not null, WHEELCHAIR_ACCESS integer, PUSHCHAIR_ACCESS integer)";
+		//String CREATE_JOURNEY_TABLE = "CREATE TABLE JOURNEY_TABLE (ROUTE_ID integer, DAY text not null, RUN_NO integer, STOP_ID integer,TIME integer)";
+
+		//db.execSQL(CREATE_STOP_TABLE);
+		//db.execSQL(CREATE_ROUTE_TABLE);
+		//db.execSQL(CREATE_JOURNEY_TABLE);
+		
+		createDatabase();
+	}
+	
 	public void createDatabase() {
 
-		Log.d("test", "create");
 		
 		boolean dbExists = checkDatabase();
 
@@ -104,11 +117,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		_db = SQLiteDatabase.openDatabase(DATABASE_PATH + DATABASE_NAME, null, SQLiteDatabase.OPEN_READONLY);		
 	}
 
-	@Override
-	public void onCreate(SQLiteDatabase db) {
-		
-		createDatabase();
-	}
 
 	List<Stop> getAllStops() {
 		List<Stop> stopList = new ArrayList<Stop>();
@@ -123,7 +131,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				Stop stop = new Stop();
 				stop.setID(cursor.getInt(0));
 				stop.setName(cursor.getString(1));
-				stop.setLocation(cursor.getString(2));
+				stop.setLat(cursor.getDouble(2));
+				stop.setLng(cursor.getDouble(3));
 				stopList.add(stop);
 			} while (cursor.moveToNext());
 		}
@@ -176,6 +185,36 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return journeyList;
 	}
 
+	
+	Long getNextBusFrom(int busStop)
+	{
+		Long nextBus = null;
+		Calendar c = Calendar.getInstance();
+		c.set(1, 1, 0);
+		Long currentTime = c.getTimeInMillis();
+		
+		String sql = "SELECT " +
+					 "TIME, " +
+					 "JOURNEY_TABLE.STOP_ID " +
+					 "FROM JOURNEY_TABLE " +
+					 "INNER JOIN STOP_TABLE ON JOURNEY_TABLE.STOP_ID = STOP_TABLE.STOP_ID " +
+					 "WHERE JOURNEY_TABLE.STOP_ID = " + busStop + " AND STOP_TABLE.STOP_ID = " + busStop + 
+					 " AND TIME > " + currentTime + 
+					 " ORDER BY TIME";
+		
+		openDatabase();
+		Cursor cursor = _db.rawQuery(sql, null);
+
+		if (cursor.moveToFirst()) {
+			do {
+				nextBus = cursor.getLong(0);
+				break;
+			} while (cursor.moveToNext());
+		}
+		
+		return nextBus;
+	}
+	
 	List<JourneyResult> getJourneyResults(int departID, int arriveID, String day, long time) {
 
 		List<JourneyResult> jresult = new ArrayList<JourneyResult>();
@@ -196,8 +235,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ "LEFT JOIN ROUTE_TABLE ON JOURNEY_TABLE.ROUTE_ID = ROUTE_TABLE.ROUTE_ID "
 				+ "LEFT JOIN STOP_TABLE AS DEP ON JOURNEY_TABLE.STOP_ID = DEP.STOP_ID "
 				+ "LEFT JOIN STOP_TABLE AS ARR ON B.STOP_ID = ARR.STOP_ID "
-				+ "WHERE B.DAY = '" + day + "' AND DEP.STOP_ID = " + departID
-				+ " AND ARR.STOP_ID = " + arriveID + " AND DEP_TIME > " + time + " ORDER BY DEP_TIME";
+				+ "WHERE JOURNEY_TABLE.DAY = '" + day + "' AND B.DAY = '" + day + "' AND DEP.STOP_ID = " + departID
+				+ " AND ARR.STOP_ID = " + arriveID + " AND DEP_TIME >= " + time + 
+				" ORDER BY DEP_TIME";
 
 		openDatabase();
 		Cursor cursor = _db.rawQuery(sql, null);
@@ -266,4 +306,47 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void addStop(SQLiteDatabase db, Stop stop){
+		
+	}
+	
+	void addJourney(Journey journey) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+
+		values.put("ROUTE_ID", journey.getRouteID());
+		values.put("DAY", journey.getDay());
+		values.put("RUN_NO", journey.getRun());
+		values.put("STOP_ID", journey.getStop());
+		values.put("TIME", journey.getTime());
+
+		db.insert(TABLE_JOURNEY, null, values);
+		db.close();
+	}
+
+	void addRoute(Route route) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+
+		values.put("ROUTE_NAME", route.getName());
+		values.put("WHEELCHAIR_ACCESS", route.getWheelchair());
+		values.put("PUSHCHAIR_ACCESS", route.getPushchair());
+
+		db.insert(TABLE_ROUTE, null, values);
+		db.close();
+	}
+
+	void addStop(Stop stop) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+
+		values.put("STOP_NAME", stop.getName());
+		values.put("GPS_LAT", stop.getLat());
+		values.put("GPS_LNG", stop.getLng());
+
+		db.insert(TABLE_STOP, null, values);
+		db.close();
+	}
+	
 }

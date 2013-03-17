@@ -4,51 +4,98 @@
     android:layout_height="match_parent"
     tools:context=".BusStopActivity" >
 
-    <Spinner
-        android:id="@+id/Spinner1"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="33dp" />
-
-    <Spinner
-        android:id="@+id/Spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Spinner1" />
-
-    <Spinner
-        android:id="@+id/hourSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Spinner2"
-        android:layout_marginTop="17dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/unilink" />
 
     <Button
         android:id="@+id/stopSearchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
-        android:text="Search" />
+        android:layout_marginBottom="118dp"
+        android:text="Find Buses" />
 
     <Spinner
-        android:id="@+id/minuteSpinner"
-        android:layout_width="wrap_content"
+        android:id="@+id/Spinner1"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/hourSpinner"
-        android:longClickable="false" />
+        android:layout_alignLeft="@+id/stopSearchButton"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="63dp" />
+
+    <Spinner
+        android:id="@+id/Spinner2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Spinner1"
+        android:layout_below="@+id/Spinner1"
+        android:layout_marginTop="21dp" />
 
     <Spinner
         android:id="@+id/daySpinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Spinner2"
+        android:layout_below="@+id/Spinner2"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/TextView03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/minuteSpinner" />
+        android:layout_alignBottom="@+id/Spinner1"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_marginBottom="16dp"
+        android:text="Origin :"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Spinner2"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/Spinner1"
+        android:text="Destination : "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/daySpinner"
+        android:layout_marginTop="18dp"
+        android:text="Day :"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/daySpinner"
+        android:layout_below="@+id/daySpinner"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:inputType="number"
+        android:onClick="showTimePickerDialog"
+        android:text="11: 30" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignLeft="@+id/TextView01"
+        android:text="Depart after :"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
