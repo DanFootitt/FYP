@@ -148,42 +148,53 @@ containing a value of this type.
         public static final int unilinklogo=0x7f020006;
     }
     public static final class id {
-        public static final int ImageButton01=0x7f04001e;
-        public static final int ImageButton02=0x7f04001f;
-        public static final int ImageButton03=0x7f04001d;
+        public static final int ImageButton01=0x7f040020;
+        public static final int ImageButton02=0x7f040021;
+        public static final int ImageButton03=0x7f04001f;
         public static final int PushText=0x7f04001a;
         public static final int Spinner1=0x7f040007;
         public static final int Spinner2=0x7f040008;
-        public static final int TextView01=0x7f04000c;
-        public static final int TextView02=0x7f04000e;
-        public static final int TextView03=0x7f04000a;
-        public static final int TextView04=0x7f04000f;
-        public static final int TextView05=0x7f040010;
-        public static final int TextView06=0x7f040016;
-        public static final int TextView1_2=0x7f040027;
-        public static final int TextView1_3=0x7f040028;
-        public static final int TextView2_1=0x7f040026;
-        public static final int TextView2_2=0x7f040024;
-        public static final int TextView2_3=0x7f040025;
-        public static final int TextView3_1=0x7f040021;
-        public static final int TextView3_2=0x7f040022;
-        public static final int TextView3_3=0x7f040023;
-        public static final int action_settings=0x7f04002f;
+        public static final int TextView1_2=0x7f040026;
+        public static final int TextView1_3=0x7f040025;
+        public static final int TextView1_4=0x7f04000f;
+        public static final int TextView1_arr=0x7f04000c;
+        public static final int TextView1_dep=0x7f04000b;
+        public static final int TextView1_time=0x7f04000e;
+        public static final int TextView1_walk=0x7f04000a;
+        public static final int TextView2_1=0x7f040016;
+        public static final int TextView2_2=0x7f04002a;
+        public static final int TextView2_3=0x7f04002e;
+        public static final int TextView2_4=0x7f040032;
+        public static final int TextView2_arr=0x7f040029;
+        public static final int TextView2_dep=0x7f040010;
+        public static final int TextView2_time=0x7f04002d;
+        public static final int TextView2_walk=0x7f040031;
+        public static final int TextView3_1=0x7f040028;
+        public static final int TextView3_2=0x7f04002c;
+        public static final int TextView3_3=0x7f040030;
+        public static final int TextView3_4=0x7f040034;
+        public static final int TextView3_arr=0x7f04002b;
+        public static final int TextView3_dep=0x7f040027;
+        public static final int TextView3_time=0x7f04002f;
+        public static final int TextView3_walk=0x7f040033;
+        public static final int action_settings=0x7f040039;
         public static final int arrText=0x7f040012;
         public static final int daySpinner=0x7f040009;
         public static final int depText=0x7f040011;
+        public static final int dpSearchButton=0x7f04001c;
+        public static final int dpSpinner=0x7f04001b;
         public static final int editText1=0x7f04000d;
         public static final int hybrid=0x7f040004;
-        public static final int imageButton2=0x7f04001c;
+        public static final int imageButton2=0x7f04001e;
         public static final int imageView1=0x7f040005;
-        public static final int imageView2=0x7f04001b;
+        public static final int imageView2=0x7f04001d;
         public static final int lengthText=0x7f040014;
-        public static final int map=0x7f040020;
+        public static final int map=0x7f040022;
         public static final int mapViewButton=0x7f040017;
-        public static final int menu_settings=0x7f04002e;
-        public static final int more1=0x7f04002a;
-        public static final int more2=0x7f04002b;
-        public static final int more3=0x7f04002c;
+        public static final int menu_settings=0x7f040038;
+        public static final int more1=0x7f040024;
+        public static final int more2=0x7f040035;
+        public static final int more3=0x7f040036;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
         public static final int routeText=0x7f040013;
@@ -191,20 +202,20 @@ containing a value of this type.
         public static final int stopSearchButton=0x7f040006;
         public static final int subscribeButton=0x7f040019;
         public static final int terrain=0x7f040003;
-        public static final int textView1=0x7f04000b;
-        public static final int textView1_1=0x7f040029;
-        public static final int textView2=0x7f04002d;
+        public static final int textView1_1=0x7f040023;
+        public static final int textView2=0x7f040037;
         public static final int timeText=0x7f040015;
         public static final int wheelText=0x7f040018;
     }
     public static final class layout {
         public static final int activity_bus_stop=0x7f030000;
         public static final int activity_deatiled_result=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_map_test=0x7f030003;
-        public static final int activity_results=0x7f030004;
-        public static final int activity_search_bus_stop=0x7f030005;
-        public static final int activity_take_me_there=0x7f030006;
+        public static final int activity_destination_picker=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_map_test=0x7f030004;
+        public static final int activity_results=0x7f030005;
+        public static final int activity_search_bus_stop=0x7f030006;
+        public static final int activity_take_me_there=0x7f030007;
     }
     public static final class menu {
         public static final int activity_bus_stop=0x7f080000;
@@ -212,8 +223,9 @@ containing a value of this type.
         public static final int activity_main=0x7f080002;
         public static final int activity_results=0x7f080003;
         public static final int activity_search_bus_stop=0x7f080004;
-        public static final int map_test=0x7f080005;
-        public static final int take_me_there=0x7f080006;
+        public static final int destination_picker=0x7f080005;
+        public static final int map_test=0x7f080006;
+        public static final int take_me_there=0x7f080007;
     }
     public static final class string {
         public static final int action_settings=0x7f050019;
@@ -284,6 +296,7 @@ containing a value of this type.
         public static final int menu_settings=0x7f050013;
         public static final int title_activity_bus_stop=0x7f050014;
         public static final int title_activity_deatiled_result=0x7f050017;
+        public static final int title_activity_destination_picker=0x7f05001b;
         public static final int title_activity_map_test=0x7f050018;
         public static final int title_activity_results=0x7f050016;
         public static final int title_activity_search_bus_stop=0x7f050015;

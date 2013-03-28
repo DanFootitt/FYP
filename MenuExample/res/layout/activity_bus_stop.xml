@@ -48,17 +48,17 @@
         android:layout_marginTop="30dp" />
 
     <TextView
-        android:id="@+id/TextView03"
+        android:id="@+id/TextView1_walk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Spinner1"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/TextView1_dep"
         android:layout_marginBottom="16dp"
         android:text="Origin :"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/TextView1_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/Spinner2"
@@ -68,10 +68,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/TextView1_arr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/TextView1_dep"
         android:layout_alignTop="@+id/daySpinner"
         android:layout_marginTop="18dp"
         android:text="Day :"
@@ -90,11 +90,11 @@
         android:text="11: 30" />
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/TextView1_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editText1"
-        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignLeft="@+id/TextView1_arr"
         android:text="Depart after :"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

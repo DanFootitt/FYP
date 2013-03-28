@@ -5,76 +5,11 @@
     tools:context=".ResultsActivity" >
 
     <TextView
-        android:id="@+id/TextView3_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView3_2"
-        android:layout_alignBottom="@+id/TextView3_2"
-        android:layout_alignLeft="@+id/textView1"
-        android:text="11:00"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/TextView3_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView3_3"
-        android:layout_alignBottom="@+id/TextView3_3"
-        android:layout_alignLeft="@+id/TextView2_2"
-        android:text="00:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/TextView3_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView2_3"
-        android:layout_below="@+id/TextView2_3"
-        android:layout_marginTop="68dp"
-        android:text="11:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/TextView2_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView2_1"
-        android:layout_alignBottom="@+id/TextView2_1"
-        android:layout_alignLeft="@+id/TextView1_2"
-        android:text="11:00"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/TextView2_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView1_3"
-        android:layout_below="@+id/TextView1_3"
-        android:layout_marginTop="72dp"
-        android:text="00:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/TextView2_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView3_3"
-        android:layout_alignLeft="@+id/textView1_1"
-        android:text="11:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
         android:id="@+id/textView1_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/TextView1_dep"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="69dp"
         android:text="11:00"
@@ -94,70 +29,6 @@
         android:minWidth="24dp"
         android:text=">" />
 
-    <Button
-        android:id="@+id/more2"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView3_3"
-        android:layout_alignLeft="@+id/more1"
-        android:minHeight="24dp"
-        android:minWidth="24dp"
-        android:text=">" />
-
-    <Button
-        android:id="@+id/more3"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView3_3"
-        android:layout_alignBottom="@+id/TextView3_3"
-        android:layout_alignLeft="@+id/more2"
-        android:minHeight="24dp"
-        android:minWidth="24dp"
-        android:text=">" />
-
-    <TextView
-        android:id="@+id/TextView1_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView1_2"
-        android:layout_alignBottom="@+id/TextView1_2"
-        android:layout_marginLeft="142dp"
-        android:layout_toRightOf="@+id/TextView1_2"
-        android:text="00:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/TextView1_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1_1"
-        android:layout_alignBottom="@+id/textView1_1"
-        android:layout_marginLeft="129dp"
-        android:layout_toRightOf="@+id/TextView3_1"
-        android:text="11:23"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1_1"
-        android:layout_alignLeft="@+id/TextView1_2"
-        android:text="Arrival" />
-
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView01"
-        android:layout_alignBottom="@+id/TextView01"
-        android:layout_alignRight="@+id/TextView1_3"
-        android:text="Total Time" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
@@ -168,12 +39,251 @@
         android:src="@drawable/unilink" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/TextView1_dep"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1_1"
         android:layout_alignParentTop="true"
         android:layout_marginTop="58dp"
         android:text="Depart" />
+
+    <TextView
+        android:id="@+id/TextView1_arr"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1_1"
+        android:layout_alignLeft="@+id/imageView1"
+        android:text="Arrival" />
+
+    <TextView
+        android:id="@+id/TextView1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1_1"
+        android:layout_alignBottom="@+id/textView1_1"
+        android:layout_alignLeft="@+id/TextView1_arr"
+        android:text="11:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView1_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView1_2"
+        android:layout_alignBottom="@+id/TextView1_2"
+        android:layout_alignLeft="@+id/TextView1_time"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView1_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView1_arr"
+        android:layout_alignBottom="@+id/TextView1_arr"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/TextView1_arr"
+        android:text="Total Time" />
+
+    <TextView
+        android:id="@+id/TextView1_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView1_3"
+        android:layout_alignBottom="@+id/TextView1_3"
+        android:layout_alignLeft="@+id/TextView1_walk"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView2_dep"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1_1"
+        android:layout_below="@+id/more1"
+        android:layout_marginTop="69dp"
+        android:text="Depart" />
+
+    <TextView
+        android:id="@+id/TextView3_dep"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView2_1"
+        android:layout_below="@+id/TextView2_1"
+        android:layout_marginTop="62dp"
+        android:text="Depart" />
+
+    <TextView
+        android:id="@+id/TextView2_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView2_dep"
+        android:layout_below="@+id/TextView2_dep"
+        android:layout_marginTop="66dp"
+        android:text="11:00"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView3_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView3_dep"
+        android:layout_below="@+id/TextView3_dep"
+        android:layout_marginTop="63dp"
+        android:text="11:00"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView2_arr"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView2_dep"
+        android:layout_alignBottom="@+id/TextView2_dep"
+        android:layout_alignLeft="@+id/TextView1_2"
+        android:text="Arrival" />
+
+    <TextView
+        android:id="@+id/TextView2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView3_dep"
+        android:layout_alignLeft="@+id/TextView2_arr"
+        android:text="11:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView3_arr"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView3_dep"
+        android:layout_alignBottom="@+id/TextView3_dep"
+        android:layout_alignLeft="@+id/TextView2_2"
+        android:text="Arrival" />
+
+    <TextView
+        android:id="@+id/TextView3_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView3_1"
+        android:layout_alignBottom="@+id/TextView3_1"
+        android:layout_alignLeft="@+id/TextView3_arr"
+        android:text="11:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView2_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView2_arr"
+        android:layout_alignBottom="@+id/TextView2_arr"
+        android:layout_alignLeft="@+id/TextView1_3"
+        android:text="Total Time" />
+
+    <TextView
+        android:id="@+id/TextView2_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView2_2"
+        android:layout_alignBottom="@+id/TextView2_2"
+        android:layout_alignLeft="@+id/TextView2_time"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView3_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView3_arr"
+        android:layout_alignBottom="@+id/TextView3_arr"
+        android:layout_alignLeft="@+id/TextView2_3"
+        android:text="Total Time" />
+
+    <TextView
+        android:id="@+id/TextView3_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView3_2"
+        android:layout_alignBottom="@+id/TextView3_2"
+        android:layout_alignLeft="@+id/TextView3_time"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView1_walk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1_1"
+        android:layout_marginLeft="54dp"
+        android:layout_toRightOf="@+id/TextView1_time"
+        android:text="Walking Time" />
+
+    <TextView
+        android:id="@+id/TextView2_walk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView2_1"
+        android:layout_alignLeft="@+id/TextView1_4"
+        android:text="Walking Time" />
+
+    <TextView
+        android:id="@+id/TextView2_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView2_3"
+        android:layout_alignBottom="@+id/TextView2_3"
+        android:layout_alignLeft="@+id/TextView2_walk"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView3_walk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView3_1"
+        android:layout_alignLeft="@+id/TextView2_4"
+        android:text="Walking Time" />
+
+    <TextView
+        android:id="@+id/TextView3_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView3_3"
+        android:layout_alignBottom="@+id/TextView3_3"
+        android:layout_alignLeft="@+id/TextView3_walk"
+        android:text="00:23"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/more2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView3_dep"
+        android:layout_alignLeft="@+id/more1"
+        android:minHeight="24dp"
+        android:minWidth="24dp"
+        android:text=">" />
+
+    <Button
+        android:id="@+id/more3"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView3_4"
+        android:layout_alignLeft="@+id/more2"
+        android:minHeight="24dp"
+        android:minWidth="24dp"
+        android:text=">" />
 
 </RelativeLayout>

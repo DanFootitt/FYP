@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 		imgbtn.setBackgroundColor(Color.TRANSPARENT);
 		
 		addImgButtonListener((ImageButton)findViewById(R.id.imageButton2), new Intent(getApplicationContext(), BusStopActivity.class));
-		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton01), new Intent(getApplicationContext(), BusStopActivity.class));
+		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton01), new Intent(getApplicationContext(), DestinationPicker.class));
 		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton02), new Intent(getApplicationContext(), MapTestActivity.class));
 		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton03), new Intent(getApplicationContext(), BusStopActivity.class));
 		

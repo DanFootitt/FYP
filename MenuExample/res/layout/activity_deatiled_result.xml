@@ -5,7 +5,7 @@
     tools:context=".DeatiledResultActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/TextView1_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -16,41 +16,41 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/TextView1_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/TextView1_dep"
+        android:layout_below="@+id/TextView1_dep"
         android:layout_marginTop="20dp"
         android:text="Departure Time : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView03"
+        android:id="@+id/TextView1_walk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView02"
-        android:layout_below="@+id/TextView02"
+        android:layout_alignLeft="@+id/TextView1_time"
+        android:layout_below="@+id/TextView1_time"
         android:layout_marginTop="18dp"
         android:text="Arrival Time : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView04"
+        android:id="@+id/TextView1_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView03"
-        android:layout_below="@+id/TextView03"
+        android:layout_alignLeft="@+id/TextView1_walk"
+        android:layout_below="@+id/TextView1_walk"
         android:layout_marginTop="18dp"
         android:text="Journey Length : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView05"
+        android:id="@+id/TextView2_dep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView04"
-        android:layout_below="@+id/TextView04"
+        android:layout_alignLeft="@+id/TextView1_4"
+        android:layout_below="@+id/TextView1_4"
         android:layout_marginTop="22dp"
         android:text="Time to Departure : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -59,10 +59,10 @@
         android:id="@+id/depText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView02"
-        android:layout_alignBottom="@+id/TextView02"
+        android:layout_alignBaseline="@+id/TextView1_time"
+        android:layout_alignBottom="@+id/TextView1_time"
         android:layout_marginLeft="19dp"
-        android:layout_toRightOf="@+id/TextView05"
+        android:layout_toRightOf="@+id/TextView2_dep"
         android:text="11:00"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -70,8 +70,8 @@
         android:id="@+id/arrText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView03"
-        android:layout_alignBottom="@+id/TextView03"
+        android:layout_alignBaseline="@+id/TextView1_walk"
+        android:layout_alignBottom="@+id/TextView1_walk"
         android:layout_alignLeft="@+id/depText"
         android:text="12:00"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -80,8 +80,8 @@
         android:id="@+id/routeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/TextView1_dep"
+        android:layout_alignBottom="@+id/TextView1_dep"
         android:layout_alignLeft="@+id/depText"
         android:text="a bus route"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -90,7 +90,7 @@
         android:id="@+id/lengthText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView05"
+        android:layout_above="@+id/TextView2_dep"
         android:layout_alignLeft="@+id/arrText"
         android:text="1:00"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -99,27 +99,27 @@
         android:id="@+id/timeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView05"
-        android:layout_alignBottom="@+id/TextView05"
+        android:layout_alignBaseline="@+id/TextView2_dep"
+        android:layout_alignBottom="@+id/TextView2_dep"
         android:layout_alignRight="@+id/routeText"
         android:text="10 Minutes"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/TextView1_arr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView06"
+        android:layout_alignLeft="@+id/TextView2_1"
         android:layout_centerVertical="true"
         android:text="Wheelchair Access : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
-        android:id="@+id/TextView06"
+        android:id="@+id/TextView2_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/TextView05"
-        android:layout_below="@+id/TextView01"
+        android:layout_alignRight="@+id/TextView2_dep"
+        android:layout_below="@+id/TextView1_arr"
         android:layout_marginTop="16dp"
         android:text="Pushchair Access : "
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -130,14 +130,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="22dp"
-        android:layout_toRightOf="@+id/TextView03"
+        android:layout_toRightOf="@+id/TextView1_walk"
         android:text="View Map" />
 
     <TextView
         android:id="@+id/wheelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView06"
+        android:layout_above="@+id/TextView2_1"
         android:layout_alignLeft="@+id/timeText"
         android:text="HELL YEAH"
         android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -155,8 +155,8 @@
         android:id="@+id/PushText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView06"
-        android:layout_alignBottom="@+id/TextView06"
+        android:layout_alignBaseline="@+id/TextView2_1"
+        android:layout_alignBottom="@+id/TextView2_1"
         android:layout_alignLeft="@+id/lengthText"
         android:text="HELL YEAH"
         android:textAppearance="?android:attr/textAppearanceSmall" />

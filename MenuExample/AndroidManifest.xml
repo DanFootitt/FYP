@@ -75,6 +75,10 @@
             android:name="com.example.menuexample.TakeMeThereActivity"
             android:label="@string/title_activity_take_me_there" >
         </activity>
+        <activity
+            android:name="com.example.menuexample.DestinationPicker"
+            android:label="@string/title_activity_destination_picker" >
+        </activity>
     </application>
 
 </manifest>

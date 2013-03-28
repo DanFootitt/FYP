@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.location.LocationListener;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -33,7 +34,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.app.TimePickerDialog;
 
-public class BusStopActivity extends Activity {
+public class BusStopActivity extends Activity  {
 
 	static final int TIMEPICKER_ID = 0;
 	private static int hour = 0;
@@ -181,7 +182,7 @@ public class BusStopActivity extends Activity {
 				int i = spinner.getSelectedItemPosition();
 				Calendar cal = Calendar.getInstance();
 
-				TextView textview = (TextView) findViewById(R.id.textView1);
+				TextView textview = (TextView) findViewById(R.id.TextView1_dep);
 				TextView textview2 = (TextView) findViewById(R.id.textView2);
 			}
 
@@ -202,9 +203,7 @@ public class BusStopActivity extends Activity {
 				if (getSelectedSpinnerItem(R.id.Spinner1) == getSelectedSpinnerItem(R.id.Spinner2))
 				{
 					Toast.makeText(getBaseContext(), "Origin and Destination cannot be the same", Toast.LENGTH_SHORT).show();
-				} else {
-					Calendar c1 = Calendar.getInstance();
-	
+				} else {	
 					List<JourneyResult> jresult = db.getJourneyResults(
 							getBusStopId(getSelectedSpinnerItem(R.id.Spinner1),
 									stops),
@@ -213,6 +212,7 @@ public class BusStopActivity extends Activity {
 							getSelectedSpinnerItem(R.id.daySpinner),
 							getTimeFromInts(hour,min,getSelectedSpinnerItem(R.id.daySpinner)));
 	
+					intent.putExtra("isWalking", false);
 					intent.putExtra("searchResultOne", jresult.get(0));
 					intent.putExtra("searchResultTwo", jresult.get(1));
 					intent.putExtra("searchResultThree", jresult.get(2));

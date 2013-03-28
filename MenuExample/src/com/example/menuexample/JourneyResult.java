@@ -12,6 +12,7 @@ public class JourneyResult implements Serializable{
 	String departStop;
 	long departTime;
 	String day;
+	int walkingTime;
 		
 	
 	public JourneyResult(){
@@ -52,6 +53,11 @@ public class JourneyResult implements Serializable{
 	public void setDepartTime(int dept)
 	{
 		this.departTime = dept;
+	}
+	
+	public void setWalkingTime(int wt)
+	{
+		this.walkingTime = wt;
 	}
 	
 	

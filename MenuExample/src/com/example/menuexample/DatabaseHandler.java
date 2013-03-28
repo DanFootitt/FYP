@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -139,6 +140,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		return stopList;
 	}
+	
+	Stop getStop(String name)
+	{
+		Stop s = new Stop();
+		
+		String selectQuery = "SELECT  * FROM " + TABLE_STOP +
+							 " WHERE STOP_NAME = '" + name + "'";
+
+		openDatabase();
+		Cursor cursor = _db.rawQuery(selectQuery, null);
+
+		if (cursor.moveToFirst()) {
+			do {
+				s.setID(cursor.getInt(0));
+				s.setName(cursor.getString(1));
+				s.setLat(cursor.getDouble(2));
+				s.setLng(cursor.getDouble(3));
+			} while (cursor.moveToNext());
+		}
+		
+		return s;
+	}
 
 	List<Route> getAllRoutes() {
 		List<Route> routeList = new ArrayList<Route>();
@@ -185,6 +208,57 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return journeyList;
 	}
 
+	public void getJourney(int dep, int dest, float dist, List<JourneyResult> jrList)
+	{
+		
+		Calendar c = Calendar.getInstance();
+		c.set(1, 1, 0);
+		int time = (int) (dist / 50);
+		c.set(Calendar.MINUTE, c.get(Calendar.MINUTE) + time );
+		long t =  c.getTimeInMillis();
+		String day = getDayFromInt(c.get(Calendar.DAY_OF_WEEK));
+		
+		
+		String sql = "SELECT "
+				+ "ROUTE_TABLE.ROUTE_NAME, "
+				+ "JOURNEY_TABLE.DAY, "
+				+ "JOURNEY_TABLE.RUN_NO, "
+				+ "JOURNEY_TABLE.TIME AS DEP_TIME, "
+				+ "DEP.STOP_NAME AS DEP_NAME, "
+				+ "B.TIME AS ARR_TIME, "
+				+ "ARR.STOP_NAME AS ARR_NAME, "
+				+ "JOURNEY_TABLE.DAY "
+				+ "FROM JOURNEY_TABLE "
+				+ ""
+				+ "INNER JOIN JOURNEY_TABLE AS B ON JOURNEY_TABLE.RUN_NO = B.RUN_NO "
+				+ "LEFT JOIN ROUTE_TABLE ON JOURNEY_TABLE.ROUTE_ID = ROUTE_TABLE.ROUTE_ID "
+				+ "LEFT JOIN STOP_TABLE AS DEP ON JOURNEY_TABLE.STOP_ID = DEP.STOP_ID "
+				+ "LEFT JOIN STOP_TABLE AS ARR ON B.STOP_ID = ARR.STOP_ID "
+				+ "WHERE JOURNEY_TABLE.DAY = '" + day + "' AND B.DAY = '" + day + "' AND DEP.STOP_ID = " + dep
+				+ " AND ARR.STOP_ID = " + dest + " AND DEP_TIME >= " + t + 
+				" ORDER BY ARR_TIME";
+
+		openDatabase();
+		Cursor cursor = _db.rawQuery(sql, null);
+
+		if (cursor.moveToFirst()) {
+			do {
+				JourneyResult j = new JourneyResult();
+				j.routeName = cursor.getString(0);
+				j.day = cursor.getString(1);
+				j.run = cursor.getInt(2);
+				j.departTime = cursor.getLong(3);
+				j.departStop = cursor.getString(4);
+				j.arrivalTime = cursor.getLong(5);
+				j.arrivalStop = cursor.getString(6);
+				j.walkingTime = time;
+				if (j.departTime < j.arrivalTime && j.day.equals(day)) {
+					jrList.add(j);
+				}
+			} while (cursor.moveToNext());
+		}
+
+	}
 	
 	Long getNextBusFrom(int busStop)
 	{
