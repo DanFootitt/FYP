@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,7 +30,7 @@ public class MainActivity extends Activity {
 		addImgButtonListener((ImageButton)findViewById(R.id.imageButton2), new Intent(getApplicationContext(), BusStopActivity.class));
 		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton01), new Intent(getApplicationContext(), DestinationPicker.class));
 		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton02), new Intent(getApplicationContext(), MapTestActivity.class));
-		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton03), new Intent(getApplicationContext(), BusStopActivity.class));
+		addImgButtonListener((ImageButton)findViewById(R.id.ImageButton03), new Intent(getApplicationContext(), DirectionActivity.class));
 		
 		
 

@@ -22,7 +22,8 @@
         android:layout_marginRight="19dp"
         android:layout_marginTop="23dp"
         android:text="Journey Planner"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        />
 
     <ImageButton
         android:id="@+id/ImageButton03"

@@ -13,6 +13,8 @@ public class JourneyResult implements Serializable{
 	long departTime;
 	String day;
 	int walkingTime;
+	double destLat;
+	double destLong;
 		
 	
 	public JourneyResult(){
@@ -58,6 +60,16 @@ public class JourneyResult implements Serializable{
 	public void setWalkingTime(int wt)
 	{
 		this.walkingTime = wt;
+	}
+	
+	public void setLng(double lng)
+	{
+		this.destLong = lng;
+	}
+	
+	public void setLat(double lat)
+	{
+		this.destLat  = lat;
 	}
 	
 	

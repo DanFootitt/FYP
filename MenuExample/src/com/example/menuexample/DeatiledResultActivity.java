@@ -3,9 +3,16 @@ package com.example.menuexample;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class DeatiledResultActivity extends Activity {
@@ -45,9 +52,35 @@ public class DeatiledResultActivity extends Activity {
 		
 		TextView textviewWheel = (TextView) findViewById(R.id.wheelText);
 		textviewWheel.setText("Yes");
+		addButtonListener((Button)findViewById(R.id.mapViewButton), new Intent(getApplicationContext(), DirectionActivity.class), journeyResult.destLat, journeyResult.destLong);
+		addButtonListener((Button)findViewById(R.id.subscribeButton), new Intent(getApplicationContext(), RegisterActivity.class));
 		
 	}
 
+	public void addButtonListener(Button button , final Intent intent, final Double lat, final Double lng)
+	{
+		button.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				intent.putExtra("lat", lat);
+				intent.putExtra("lng", lng);
+				startActivity(intent);
+			}
+		});
+	}
+	
+	public void addButtonListener(Button button , final Intent intent)
+	{
+		button.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(intent);
+			}
+		});
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

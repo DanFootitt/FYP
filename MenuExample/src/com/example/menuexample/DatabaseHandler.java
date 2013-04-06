@@ -227,7 +227,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ "DEP.STOP_NAME AS DEP_NAME, "
 				+ "B.TIME AS ARR_TIME, "
 				+ "ARR.STOP_NAME AS ARR_NAME, "
-				+ "JOURNEY_TABLE.DAY "
+				+ "JOURNEY_TABLE.DAY, "
+				+ "DEP.GPS_LAT, "
+				+ "DEP.GPS_LNG "
 				+ "FROM JOURNEY_TABLE "
 				+ ""
 				+ "INNER JOIN JOURNEY_TABLE AS B ON JOURNEY_TABLE.RUN_NO = B.RUN_NO "
@@ -252,6 +254,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				j.arrivalTime = cursor.getLong(5);
 				j.arrivalStop = cursor.getString(6);
 				j.walkingTime = time;
+				j.destLat = cursor.getDouble(8);
+				j.destLong = cursor.getDouble(9 );
 				if (j.departTime < j.arrivalTime && j.day.equals(day)) {
 					jrList.add(j);
 				}
@@ -302,7 +306,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ "DEP.STOP_NAME AS DEP_NAME, "
 				+ "B.TIME AS ARR_TIME, "
 				+ "ARR.STOP_NAME AS ARR_NAME, "
-				+ "JOURNEY_TABLE.DAY "
+				+ "JOURNEY_TABLE.DAY, "
+				+ "DEP.GPS_LAT, "
+				+ "DEP.GPS_LNG "
 				+ "FROM JOURNEY_TABLE "
 				+ ""
 				+ "INNER JOIN JOURNEY_TABLE AS B ON JOURNEY_TABLE.RUN_NO = B.RUN_NO "
@@ -326,6 +332,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				j.departStop = cursor.getString(4);
 				j.arrivalTime = cursor.getLong(5);
 				j.arrivalStop = cursor.getString(6);
+				j.destLat = cursor.getDouble(8);
+				j.destLong = cursor.getDouble(9);
 				if (j.departTime < j.arrivalTime && j.day.equals(day)) {
 					jresult.add(j);
 				}

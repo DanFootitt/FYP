@@ -12,5 +12,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_take_me_there">TakeMeThereActivity</string>
     <string name="title_activity_destination_picker">DestinationPicker</string>
+    <string name="title_activity_direction">DirectionActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_test_gcm">TestGCMActivity</string>
 
 </resources>
